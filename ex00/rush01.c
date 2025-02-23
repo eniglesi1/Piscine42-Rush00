@@ -17,14 +17,19 @@ static void	ft_putcoord(int i, int j, int x, int y)
 	if (j == 0 || j == y)
 	{
 		if (i == 0 || i == x)
-			ft_putchar('o');
+		{
+			if ((i == 0 && j == 0) || (i != 0 && j != 0))
+				ft_putchar('/');
+			else
+				ft_putchar('\\');
+		}
 		else
-			ft_putchar('-');
+			ft_putchar('*');
 	}
 	else
 	{
 		if (i == 0 || i == x)
-			ft_putchar('|');
+			ft_putchar('*');
 		else
 			ft_putchar(' ');
 	}

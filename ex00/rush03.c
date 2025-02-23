@@ -12,24 +12,6 @@
 
 void	ft_putchar(char c);
 
-static void	ft_putcoord(int i, int j, int x, int y)
-{
-	if (j == 0 || j == y)
-	{
-		if (i == 0 || i == x)
-			ft_putchar('o');
-		else
-			ft_putchar('-');
-	}
-	else
-	{
-		if (i == 0 || i == x)
-			ft_putchar('|');
-		else
-			ft_putchar(' ');
-	}
-}
-
 void	rush(int x, int y)
 {
 	int	i;
@@ -43,7 +25,25 @@ void	rush(int x, int y)
 		i = 0;
 		while (i <= x)
 		{
-			ft_putcoord(i, j, x, y);
+			if (j == 0 || j == y)
+			{
+				if (i == 0 || i == x)
+				{
+					if (i == 0)
+						ft_putchar('A');
+					else
+						ft_putchar('C');
+				}
+				else
+					ft_putchar('B');
+			}
+			else
+			{
+				if (i == 0 || i == x)
+					ft_putchar('B');
+				else
+					ft_putchar(' ');
+			}
 			i++;
 		}
 		ft_putchar('\n');
